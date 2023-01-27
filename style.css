@@ -27,6 +27,7 @@ form input[type="radio"] {
 }
 
 form input[type="submit"] {
+    font-size: larger;
     width: 30%;
     background-color: #4CAF50;
     color: white;

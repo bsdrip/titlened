@@ -3,7 +3,7 @@ body {
     background-color: #f0f0f0;
 }
 
-form {
+div[class="container"] {
     margin: 40px auto;
     width: 50%;
     background-color: #fff;
@@ -13,7 +13,7 @@ form {
     text-align: center;
 }
 
-form input[type="text"] {
+input[type="text"] {
     width: 70%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -22,11 +22,11 @@ form input[type="text"] {
     border-radius: 4px;
 }
 
-form input[type="radio"] {
+input[type="radio"] {
     margin: 8px 0;
 }
 
-form input[type="submit"] {
+#generate-button {
     font-size: larger;
     width: 30%;
     background-color: #4CAF50;
@@ -38,7 +38,7 @@ form input[type="submit"] {
     cursor: pointer;
 }
 
-form input[type="submit"]:hover {
+input[type="submit"]:hover {
     background-color: #45a049;
 }
 

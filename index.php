@@ -46,7 +46,6 @@ function get_pointz_title($link) {
         <button id="copy-button" onclick="copyText()">Copy</button>
         </pre>
     <?php endif; ?>
-
     <script>
         function copyText() {
             const codeBlock = document.getElementById('code-block');

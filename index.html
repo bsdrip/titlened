@@ -12,8 +12,8 @@
         <input type="text" id="link" placeholder="Enter YouTrack link"> <br>
         <input type="radio" id="branch_name" name="result" value="branch_name">
         <label for="branch_name">Branch Name</label>
-        <input type="radio" id="pointz_title" name="result" value="pointz_title">
-        <label for="pointz_title">Pointz Title</label> <br>
+        <input type="radio" id="poinz_title" name="result" value="poinz_title">
+        <label for="poinz_title">Poinz Title</label> <br>
         <input type="button" value="Generate" onclick="generate()">
     </form>
     <pre>
@@ -28,7 +28,7 @@
             if (resultType === "branch_name") {
                 const link_parts = link.split('/');
                 result = link_parts[link_parts.length - 2] + '-' + link_parts[link_parts.length - 1].replace(/-/g, '_');
-            } else if (resultType === "pointz_title") {
+            } else if (resultType === "poinz_title") {
                 const link_parts = link.split('/');
                 result = link_parts[link_parts.length - 2] + ' ' + link_parts[link_parts.length - 1].replace(/-/g, ' ');
             }

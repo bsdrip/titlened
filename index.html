@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titlened</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <input type="text" id="link" placeholder="Enter YouTrack link"> <br>
+        <input type="radio" id="branch_name" name="result" value="branch_name">
+        <label for="branch_name">Branch Name</label>
+        <input type="radio" id="pointz_title" name="result" value="pointz_title">
+        <label for="pointz_title">Pointz Title</label> <br>
+        <input type="button" value="Generate" onclick="generate()">
+    </form>
+    <pre>
+        <code id="code-block"></code>
+        <button id="copy-button" onclick="copyText()">Copy</button>
+    </pre>
+    <script>
+        function generate() {
+            const link = document.getElementById("link").value;
+            const resultType = document.querySelector("input[name='result']:checked").value;
+            let result;
+            if (resultType === "branch_name") {
+                const link_parts = link.split('/');
+                result = link_parts[link_parts.length - 2] + '-' + link_parts[link_parts.length - 1].replace(/-/g, '_');
+            } else if (resultType === "pointz_title") {
+                const link_parts = link.split('/');
+                result = link_parts[link_parts.length - 2] + ' ' + link_parts[link_parts.length - 1].replace(/-/g, ' ');
+            }
+            document.getElementById("code-block").innerHTML = result;
+        }
+
+        function copyText() {
+            const codeBlock = document.getElementById('code-block');
+            const range = document.createRange();
+            range.selectNode(codeBlock);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+</html>

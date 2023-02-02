@@ -33,7 +33,7 @@
                 }
             } else if (resultType === "poinz_title") {
                 const link_parts = link.split('/');
-                result = link_parts[link_parts.length - 2] + ' ' + link_parts[link_parts.length - 1].replace(/-/g, ' ');
+                result = link_parts[link_parts.length - 2] + ':'  + ' ' + link_parts[link_parts.length - 1].replace(/-/g, ' ');
                 if (result === 'undefined ') {
                     result = 'Invalid link';
                 }
